@@ -23,13 +23,11 @@ Meu portfólio pessoal desenvolvido com Next.js 13+ e TypeScript, apresentando m
 ## 📱 Deploy
 O projeto estará hospedado na Vercel em breve.
 
-📞 Contato
-Email: gaby.sendeski@hotmail.com
-WhatsApp: +55 (41) 98455-9193
-LinkedIn: 
-
-LinkedIn:https://www.linkedin.com/in/gabrielly-sendeski/
-GitHub: https://github.com/gabysendeski
+## 📞 Contato
+- **Email:** gaby.sendeski@hotmail.com
+- **WhatsApp:** +55 (41) 98455-9193
+- **LinkedIn:** https://www.linkedin.com/in/gabrielly-sendeski/
+- **GitHub:** https://github.com/gabysendeski
 
 Desenvolvido com 💜 por Gabrielly Sendeski
 
