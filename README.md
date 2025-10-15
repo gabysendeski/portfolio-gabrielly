@@ -1,10 +1,10 @@
-# �� Portfolio Gabrielly Sendeski
+# 💼 Portfolio Gabrielly Sendeski
 
 Meu portfólio pessoal desenvolvido com Next.js 13+ e TypeScript, apresentando meus projetos e habilidades como desenvolvedora front-end.
 
-## �� Tecnologias Utilizadas
+## 🚀 Tecnologias Utilizadas
 
-- **Next.js 13+** - Framework React com App Router
+- **Next.js 13+** - Framework React with App Router
 - **TypeScript** - Tipagem estática
 - **Tailwind CSS** - Estilização
 - **Framer Motion** - Animações
@@ -31,11 +31,9 @@ cd portfolio-gabrielly
 npm install
 
 # Executar em modo de desenvolvimento
-npm run dev
+npm run dev ```
 
-Acesse 
-localhost
- para ver o resultado.
+Acesse localhost para ver o resultado.
 
 📱 Deploy
 O projeto estará hospedado na Vercel em breve.
@@ -45,8 +43,9 @@ Email: gaby.sendeski@hotmail.com
 WhatsApp: +55 (41) 98455-9193
 LinkedIn: 
 
-www.linkedin.com
-GitHub: 
+www.linkedin.com: https://www.linkedin.com/in/gabrielly-sendeski/
+GitHub: https://github.com/gabysendeski
 
 github.com
 Desenvolvido com 💜 por Gabrielly Sendeski
+
