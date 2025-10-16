@@ -1,9 +1,20 @@
 'use client';
 
-import Image from 'next/image';
 import { ArrowDown, Github, Linkedin, Mail, MessageCircle } from 'lucide-react';
 
 const Hero = () => {
+  // Detectar ambiente e ajustar caminho da imagem
+  const getImagePath = () => {
+    if (typeof window !== 'undefined') {
+      // Se estiver no GitHub Pages
+      if (window.location.hostname === 'gabysendeski.github.io') {
+        return '/portfolio-gabrielly/images/profile.jpg';
+      }
+    }
+    // Para localhost e desenvolvimento
+    return '/images/profile.jpg';
+  };
+
   const socialLinks = [
     {
       name: 'GitHub',
@@ -22,7 +33,7 @@ const Hero = () => {
     },
     {
       name: 'WhatsApp',
-      url: 'https://wa.me/5511999999999?text=Olá%20Gabrielly!%20Vi%20seu%20portfólio.',
+      url: 'https://wa.me/5541984559193?text=Olá%20Gabrielly!%20Vi%20seu%20portfólio.',
       icon: <MessageCircle size={24} />,
     },
   ];
@@ -90,7 +101,6 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Imagem de Perfil na Bolinha - POSIÇÃO AJUSTADA */}
           <div className="flex justify-center lg:justify-end animate-slide-up animation-delay-300">
             <div className="relative">
               {/* Container da imagem de perfil */}
@@ -98,16 +108,17 @@ const Hero = () => {
                 {/* Círculo de fundo com gradiente */}
                 <div className="absolute inset-0 bg-gradient-to-br from-primary-100 to-primary-200 rounded-full"></div>
                 
-                {/* Sua imagem de perfil dentro da bolinha - AJUSTADA */}
                 <div className="absolute inset-4 rounded-full overflow-hidden bg-white shadow-xl">
-                  <Image
-                    src="/images/profile.jpg"   
-                    alt="Gabrielly Sendeski - Foto de Perfil"
-                    fill
-                    className="object-cover object-[center_0%]" // 👈 AJUSTE AQUI: desce a imagem
-                    priority
-                    placeholder="blur"
-                    blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
+                  {/* ✅ IMAGEM COM DETECÇÃO AUTOMÁTICA DE AMBIENTE */}
+                  <img
+                    src={getImagePath()}
+                    alt="Gabrielly Sendeski - Desenvolvedora Front-end"
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      console.log('Erro ao carregar imagem');
+                      // Fallback para placeholder se a imagem não carregar
+                      e.currentTarget.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDMwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik0xNTAgMTAwQzEyNy45MSAxMDAgMTEwIDExNy45MSAxMTAgMTQwQzExMCAxNjIuMDkgMTI3LjkxIDE4MCAxNTAgMTgwQzE3Mi4wOSAxODAgMTkwIDE2Mi4wOSAxOTAgMTQwQzE5MCAxMTcuOTEgMTcyLjA5IDEwMCAxNTAgMTAwWiIgZmlsbD0iIzlDQTNBRiIvPgo8cGF0aCBkPSJNMjEwIDI0MEMyMTAgMjEzLjQ5IDE4OC4yNiAxOTIgMTYwIDE5MkgxNDBDMTExLjc0IDE5MiA5MCAyMTMuNDkgOTAgMjQwVjI2MEgyMTBWMjQwWiIgZmlsbD0iIzlDQTNBRiIvPgo8L3N2Zz4K';
+                    }}
                   />
                 </div>
 
