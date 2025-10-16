@@ -3,18 +3,6 @@
 import { ArrowDown, Github, Linkedin, Mail, MessageCircle } from 'lucide-react';
 
 const Hero = () => {
-  // Detectar ambiente e ajustar caminho da imagem
-  const getImagePath = () => {
-    if (typeof window !== 'undefined') {
-      // Se estiver no GitHub Pages
-      if (window.location.hostname === 'gabysendeski.github.io') {
-        return '/portfolio-gabrielly/images/profile.jpg';
-      }
-    }
-    // Para localhost e desenvolvimento
-    return '/images/profile.jpg';
-  };
-
   const socialLinks = [
     {
       name: 'GitHub',
@@ -109,16 +97,11 @@ const Hero = () => {
                 <div className="absolute inset-0 bg-gradient-to-br from-primary-100 to-primary-200 rounded-full"></div>
                 
                 <div className="absolute inset-4 rounded-full overflow-hidden bg-white shadow-xl">
-                  {/* ✅ IMAGEM COM DETECÇÃO AUTOMÁTICA DE AMBIENTE */}
+                  {/* ✅ CAMINHO RELATIVO SIMPLES - FUNCIONA EM AMBOS */}
                   <img
-                    src={getImagePath()}
+                    src="./images/profile.jpg"
                     alt="Gabrielly Sendeski - Desenvolvedora Front-end"
                     className="w-full h-full object-cover"
-                    onError={(e) => {
-                      console.log('Erro ao carregar imagem');
-                      // Fallback para placeholder se a imagem não carregar
-                      e.currentTarget.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDMwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik0xNTAgMTAwQzEyNy45MSAxMDAgMTEwIDExNy45MSAxMTAgMTQwQzExMCAxNjIuMDkgMTI3LjkxIDE4MCAxNTAgMTgwQzE3Mi4wOSAxODAgMTkwIDE2Mi4wOSAxOTAgMTQwQzE5MCAxMTcuOTEgMTcyLjA5IDEwMCAxNTAgMTAwWiIgZmlsbD0iIzlDQTNBRiIvPgo8cGF0aCBkPSJNMjEwIDI0MEMyMTAgMjEzLjQ5IDE4OC4yNiAxOTIgMTYwIDE5MkgxNDBDMTExLjc0IDE5MiA5MCAyMTMuNDkgOTAgMjQwVjI2MEgyMTBWMjQwWiIgZmlsbD0iIzlDQTNBRiIvPgo8L3N2Zz4K';
-                    }}
                   />
                 </div>
 
