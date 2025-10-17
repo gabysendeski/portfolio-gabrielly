@@ -53,12 +53,12 @@ export const projects: Project[] = [
   },
   {
     id: '5',
-    title: 'Sistema de Gestão',
-    description: 'Sistema completo para gestão empresarial',
-    detailedDescription: 'Sistema web completo para gestão empresarial desenvolvido com React, Node.js e PostgreSQL. Inclui módulos de vendas, estoque, financeiro e relatórios gerenciais com interface intuitiva e responsiva.',
-    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop',
-    technologies: ['React', 'Node.js', 'Express', 'PostgreSQL', 'Material-UI'],
-    githubUrl: 'https://github.com/gabysendeski/sistema-gestao',
+    title: 'Gestão Escolar',
+    description: 'Este projeto é um sistema de gestão escolar desenvolvido com Vue.js no frontend e Node.js com Express no backend, utilizando um banco de dados relacional.',
+    detailedDescription: 'Sistema de gestão escolar desenvolvido com Vue, Node.js Node.js com Express no backend, utilizando um banco de dados relacional.',
+    image: './images/projects/image-gestao-escolar.png',
+    technologies: ['Vue', 'Node.js', 'Express', 'PostgreSQL'],
+    githubUrl: 'https://github.com/gabysendeski/akyama',
     liveUrl: 'https://gestao-demo.vercel.app',
     category: 'web',
     createdAt: '2023-11-20'
