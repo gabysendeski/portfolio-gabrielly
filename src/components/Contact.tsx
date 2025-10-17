@@ -8,7 +8,7 @@ const Contact = () => {
     {
       icon: <MessageCircle className="w-8 h-8" />,
       title: 'WhatsApp',
-      value: '(41) 98355-9193',
+      value: '(41) 98455-9193',
       link: 'https://wa.me/5541984559193?text=Olá%20Gabrielly!%20Vi%20seu%20portfólio%20e%20gostaria%20de%20conversar.',
       color: 'from-green-500 to-green-600',
       bgColor: 'bg-green-50 hover:bg-green-100',
