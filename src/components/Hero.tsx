@@ -97,7 +97,6 @@ const Hero = () => {
                 <div className="absolute inset-0 bg-gradient-to-br from-primary-100 to-primary-200 rounded-full"></div>
                 
                 <div className="absolute inset-4 rounded-full overflow-hidden bg-white shadow-xl">
-                  {/* ✅ CAMINHO RELATIVO SIMPLES - FUNCIONA EM AMBOS */}
                   <img
                     src="./images/profile.jpg"
                     alt="Gabrielly Sendeski - Desenvolvedora Front-end"

@@ -3,16 +3,16 @@
 const About = () => {
   const experiences = [
     {
-      period: '2024 - Atual',
-      company: 'Freelancer',
-      position: 'Desenvolvedora de Software',
-      description: 'De forma independente, atuo com o desenvolvimento de software de ponta a ponta, desde o levantamento de requisitos com as partes envolvidas no projeto, prototipação, codificação no lado do cliente, documentação, implementação, até a apresentação para o cliente final, utilizando linguagens fortes no mercado, sempre atualizado e a nível de exigência internacional, trabalhando com metodologias ágeis.'
-    },
-    {
       period: '2022 - Atual',
       company: 'Cia Hering',
       position: 'Desenvolvedora Front End',
       description: 'Desenvolvimento de interfaces modernas e responsivas com React e TypeScript, Node.js'
+    },
+    {
+      period: '2024 - Atual',
+      company: 'Freelancer',
+      position: 'Desenvolvedora de Software',
+      description: 'De forma independente, atuo com o desenvolvimento de software de ponta a ponta, desde o levantamento de requisitos com as partes envolvidas no projeto, prototipação, codificação no lado do cliente, documentação, implementação, até a apresentação para o cliente final, utilizando linguagens fortes no mercado, sempre atualizado e a nível de exigência internacional, trabalhando com metodologias ágeis.'
     }
   ];
 

@@ -6,7 +6,7 @@ export const projects: Project[] = [
     title: 'Landing Page - Especialista Certificada em Cílios e Sobrancelhas ',
     description: 'Landing page profissional para Beauty Academy- Ketlyn Carvalho - Especialista Certificada em Cílios e Sobrancelhas',
     detailedDescription: 'Uma plataforma de e-commerce completa desenvolvida com Next.js 13+ App Router, TypeScript, Tailwind CSS e integração com Stripe para pagamentos. Inclui sistema de autenticação, carrinho de compras, painel administrativo e muito mais.',
-    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop',
+    image: './images/projects/image-ketlyn.png',
     technologies: ['Next.js 13', 'TypeScript', 'Tailwind CSS', 'React'],
     githubUrl: 'https://github.com/gabysendeski/studio-ketlyn-carvalho-landin',
     liveUrl: 'https://gabysendeski.github.io/studio-ketlyn-carvalho-landin/',
@@ -43,13 +43,13 @@ export const projects: Project[] = [
     id: '4',
     title: 'Portfolio Pessoal',
     description: 'Site portfolio com design moderno e interativo',
-    detailedDescription: 'Portfolio pessoal desenvolvido com Next.js 13+ App Router, apresentando projetos e habilidades de forma interativa. Inclui animações suaves, design responsivo e otimizações de performance.',
-    image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&h=600&fit=crop',
+    detailedDescription: 'Portfolio pessoal desenvolvido com Next.js 13+, apresentando projetos e habilidades de forma interativa. Inclui animações suaves, design responsivo e otimizações de performance.',
+    image: './images/projects/image-portfolio.png',
     technologies: ['Next.js 13', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
-    githubUrl: 'https://github.com/gabysendeski/portfolio',
-    liveUrl: 'https://portfolio-demo.vercel.app',
+    githubUrl: 'https://github.com/gabysendeski/portfolio-gabrielly',
+    liveUrl: 'https://gabysendeski.github.io/portfolio-gabrielly/',
     category: 'web',
-    createdAt: '2024-01-05'
+    createdAt: '2025-10-10'
   },
   {
     id: '5',
