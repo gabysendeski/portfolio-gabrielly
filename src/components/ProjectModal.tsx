@@ -47,11 +47,6 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                 <h2 className="text-2xl font-bold text-gray-900">
                   {project.title}
                 </h2>
-                {project.featured && (
-                  <span className="bg-primary-100 text-primary-700 text-xs font-medium px-3 py-1 rounded-full">
-                    Destaque
-                  </span>
-                )}
               </div>
               <div className="flex items-center gap-4 text-sm text-gray-600">
                 <div className="flex items-center gap-1">
@@ -111,10 +106,12 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                   key={tech}
                   className={cn(
                     "bg-gradient-to-r p-3 rounded-lg text-white text-sm font-medium text-center shadow-md animate-slide-up",
-                    index % 4 === 0 && "from-blue-500 to-blue-600",
-                    index % 4 === 1 && "from-green-500 to-green-600",
-                    index % 4 === 2 && "from-purple-500 to-purple-600",
-                    index % 4 === 3 && "from-orange-500 to-orange-600"
+                    index % 6 === 0 && "from-indigo-500 to-indigo-700",
+                    index % 6 === 1 && "from-emerald-500 to-emerald-700",
+                    index % 6 === 2 && "from-rose-500 to-rose-700",
+                    index % 6 === 3 && "from-amber-500 to-amber-700",
+                    index % 6 === 4 && "from-violet-500 to-violet-700",
+                    index % 6 === 5 && "from-cyan-500 to-cyan-700"
                   )}
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
@@ -124,7 +121,6 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
             </div>
           </div>
 
-          {/* Funcionalidades/Características */}
           <div className="mb-8">
             <h3 className="text-xl font-semibold text-gray-900 mb-4 flex items-center gap-2">
               <div className="w-1 h-6 bg-primary-600 rounded-full" />
@@ -135,9 +131,7 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                 'Interface responsiva e moderna',
                 'Performance otimizada',
                 'Código limpo e bem documentado',
-                'Testes automatizados',
-                'Deploy automatizado',
-                'SEO otimizado'
+                'Deploy automatizado'
               ].map((feature, index) => (
                 <div
                   key={index}
@@ -151,14 +145,13 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
             </div>
           </div>
 
-          {/* Botões de Ação */}
           <div className="flex flex-col sm:flex-row gap-4 pt-6 border-t border-gray-200">
             {project.githubUrl && (
               <a
                 href={project.githubUrl}
                 
                 rel="noopener noreferrer"
-                className="btn-primary inline-flex items-center justify-center gap-3 flex-1"
+                className="inline-flex items-center justify-center gap-3 flex-1 bg-gradient-to-r from-gray-800 to-gray-900 hover:from-gray-900 hover:to-black text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:shadow-lg transform hover:scale-105 active:scale-95"
               >
                 <Github size={20} />
                 Ver Código no GitHub
@@ -169,7 +162,7 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                 href={project.liveUrl}
                 
                 rel="noopener noreferrer"
-                className="btn-secondary inline-flex items-center justify-center gap-3 flex-1"
+                className="inline-flex items-center justify-center gap-3 flex-1 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:shadow-lg transform hover:scale-105 active:scale-95"
               >
                 <ExternalLink size={20} />
                 Ver Projeto Online
@@ -179,7 +172,7 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
               href="https://www.linkedin.com/in/gabrielly-sendeski/"
               
               rel="noopener noreferrer"
-              className="btn-secondary inline-flex items-center justify-center gap-3 flex-1"
+              className="inline-flex items-center justify-center gap-3 flex-1 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:shadow-lg transform hover:scale-105 active:scale-95"
             >
               <Linkedin size={20} />
               Conectar no LinkedIn

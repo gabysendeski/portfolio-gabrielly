@@ -8,7 +8,7 @@ const Contact = () => {
     {
       icon: <MessageCircle className="w-8 h-8" />,
       title: 'WhatsApp',
-      value: '+55 (41) 98355-9193',
+      value: '(41) 98355-9193',
       link: 'https://wa.me/5541984559193?text=Olá%20Gabrielly!%20Vi%20seu%20portfólio%20e%20gostaria%20de%20conversar.',
       color: 'from-green-500 to-green-600',
       bgColor: 'bg-green-50 hover:bg-green-100',
@@ -96,13 +96,12 @@ const Contact = () => {
 
           {/* Call to Action - VERSÃO AZUL */}
 <div className="bg-gradient-to-r from-slate-700 to-slate-800 rounded-2xl p-8 md:p-12 text-white text-center relative overflow-hidden">
-  {/* Elementos decorativos de fundo */}
   <div className="absolute top-0 left-0 w-40 h-40 bg-blue-500/10 rounded-full -translate-x-20 -translate-y-20"></div>
   <div className="absolute bottom-0 right-0 w-32 h-32 bg-purple-500/10 rounded-full translate-x-16 translate-y-16"></div>
   
   <div className="relative z-10">
     <h3 className="text-2xl md:text-3xl font-bold mb-4">
-      Pronta para o Próximo Passo?
+      Pronto para o Próximo Passo?
     </h3>
     <p className="text-lg text-slate-300 mb-8 max-w-2xl mx-auto">
       Estou sempre aberta a discutir novos projetos e oportunidades. 

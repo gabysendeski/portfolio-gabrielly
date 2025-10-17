@@ -51,10 +51,9 @@ const Footer = () => {
           {/* Copyright e Informações */}
           <div className="space-y-4">
             <div className="flex items-center justify-center gap-2 text-gray-400 text-sm">
-              <span>© {currentYear} Gabrielly Sendeski.</span>
               <span>Feito com</span>
               <Heart size={16} className="text-red-500 animate-pulse" />
-              <span>usando Next.js 13+ e Tailwind CSS</span>
+              <span> por Gabrielly Sendeski.© {currentYear}</span>              
             </div>
             
             
