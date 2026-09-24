@@ -1,98 +1,51 @@
-'use client';
+import { ThemeToggle } from "./ThemeToggle";
+import { MobileNav } from "./MobileNav";
+import { Container } from "./ui/Container";
+import { navigation, profile } from "@/data/portfolio";
 
-import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
-import { cn } from '@/lib/utils';
-
-const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const navItems = [
-    { name: 'Início', href: '#home' },
-    { name: 'Sobre', href: '#about' },
-    { name: 'Projetos', href: '#projects' },
-    { name: 'Contato', href: '#contact' },
-  ];
-
+export function Header() {
   return (
-    <header
-      className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-        isScrolled
-          ? 'bg-white/90 backdrop-blur-md shadow-lg'
-          : 'bg-transparent'
-      )}
-    >
-      <nav className="container-max">
-        <div className="flex items-center justify-between h-16 px-4 sm:px-6 lg:px-8">
-          {/* Logo */}
-          <div className="flex-shrink-0">
+    <header className="sticky top-0 z-50 border-b border-line bg-background/90 backdrop-blur-xl">
+      <Container className="flex min-h-20 items-center justify-between gap-3">
+        <a
+          href="#topo"
+          aria-label="Início — Gabrielly Sendeski"
+          className="flex items-center gap-3"
+        >
+          <span className="grid size-10 shrink-0 place-items-center rounded-lg border border-line font-mono text-sm text-accent">
+            gs.
+          </span>
+          <span className="text-sm font-bold tracking-tight sm:text-base">
+            Gabrielly<span className="text-accent">.</span>
+          </span>
+        </a>
+        <nav
+          aria-label="Navegação principal"
+          className="hidden items-center gap-7 md:flex"
+        >
+          {navigation.map((item) => (
             <a
-              href="#home"
-              className="text-2xl font-bold text-gray-900 hover:text-primary-600 transition-colors"
+              key={item.href}
+              href={item.href}
+              className="py-3 text-xs text-muted transition-colors hover:text-foreground"
             >
-              Portfólio
+              {item.label}
             </a>
-          </div>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
-              {navItems.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.name}
-                </a>
-              ))}
-            </div>
-          </div>
-
-          {/* Mobile menu button */}
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-700 hover:text-primary-600 p-2"
-              aria-label="Toggle menu"
-            >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
-          </div>
+          ))}
+        </nav>
+        <div className="flex items-center gap-3">
+          <a
+            href={profile.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden rounded-lg border border-accent/40 px-4 py-2.5 text-xs font-semibold transition-colors hover:bg-accent/10 lg:block"
+          >
+            Vamos conversar ↗
+          </a>
+          <ThemeToggle />
+          <MobileNav />
         </div>
-
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="md:hidden bg-white border-t border-gray-200">
-            <div className="px-2 pt-2 pb-3 space-y-1">
-              {navItems.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="text-gray-700 hover:text-primary-600 block px-3 py-2 text-base font-medium transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.name}
-                </a>
-              ))}
-            </div>
-          </div>
-        )}
-      </nav>
+      </Container>
     </header>
   );
-};
-
-export default Header;
+}

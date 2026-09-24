@@ -1,60 +1,41 @@
-'use client';
+import { projects } from "@/data/portfolio";
+import { selectProjects } from "@/lib/projects";
+import { Container } from "./ui/Container";
+import { SectionHeading } from "./ui/SectionHeading";
+import { FeaturedProject } from "./projects/FeaturedProject";
+import { ProjectCard } from "./projects/ProjectCard";
 
-import { useState } from 'react';
-import { Project } from '@/types';
-import { projects } from '@/data/projects';
-import ProjectCard from './ProjectCard';
-import ProjectModal from './ProjectModal';
-
-const Projects = () => {
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const openModal = (project: Project) => {
-    setSelectedProject(project);
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-    setSelectedProject(null);
-  };
-
-  const allProjects = projects;
-
+export function Projects() {
+  const { featured, remaining } = selectProjects(projects);
+  if (!projects.length) return null;
   return (
-    <section id="projects" className="section-padding bg-gray-50">
-      <div className="container-max">
-        <div className="text-center mb-12">
-          <h2 className="text-responsive-lg font-bold text-gray-900 mb-4">
-            Meus Projetos
-          </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Alguns dos projetos que desenvolvi usando as tecnologias mais modernas
-          </p>
-        </div>
+    <section
+      id="projetos"
+      aria-labelledby="projects-title"
+      className="section-space border-y border-line bg-surface/40"
+    >
+      <Container>
+        <SectionHeading
+          index="02"
+          label="Trabalho na prática"
+          id="projects-title"
+          title="Intenção que vira experiência."
+          description="Da presença digital a produtos de operação: projetos que conectam contexto, interface e engenharia."
+        />
 
-        {/* ✅ GRID COM TODOS OS PROJETOS */}
-        <div className="grid-responsive">
-          {allProjects.map((project) => (
-            <ProjectCard
-              key={project.id}
-              project={project}
-              onClick={openModal}
-            />
-          ))}
-        </div>
-
-        {/* Modal */}
-        {isModalOpen && selectedProject && (
-          <ProjectModal
-            project={selectedProject}
-            onClose={closeModal}
-          />
+        {featured && <FeaturedProject project={featured} />}
+        {remaining.length > 0 && (
+          <div className="mt-5 grid gap-5 md:grid-cols-3">
+            {remaining.map((project, index) => (
+              <ProjectCard
+                key={project.id}
+                project={project}
+                number={index + (featured ? 2 : 1)}
+              />
+            ))}
+          </div>
         )}
-      </div>
+      </Container>
     </section>
   );
-};
-
-export default Projects;
+}
