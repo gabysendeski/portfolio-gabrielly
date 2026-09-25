@@ -1,4 +1,6 @@
 import type { Project } from "@/data/portfolio";
+import Image from "next/image";
+import { assetPath } from "@/lib/assets";
 import { Tags } from "../ui/Tags";
 import { ProjectDetails } from "./ProjectDetails";
 import { ProjectMetrics } from "./ProjectMetrics";
@@ -24,6 +26,18 @@ export function ProjectCard({
           ↗
         </span>
       </div>
+      {project.preview && (
+        <div className="mb-6 overflow-hidden rounded-lg border border-line">
+          <Image
+            src={assetPath(project.preview.src)}
+            alt={project.preview.alt}
+            width={project.preview.width}
+            height={project.preview.height}
+            sizes="(min-width: 768px) 360px, 90vw"
+            className={`aspect-[16/10] w-full ${project.preview.fit === "contain" ? "object-contain" : "object-cover object-top"}`}
+          />
+        </div>
+      )}
       <p className="font-mono text-[10px] uppercase tracking-wider text-accent">
         {project.category}
       </p>

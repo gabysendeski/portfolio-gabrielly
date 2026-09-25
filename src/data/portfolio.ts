@@ -37,7 +37,13 @@ export type Project = {
   technologies: readonly string[];
   liveUrl?: `https://${string}`;
   linkLabel?: string;
-  preview?: { src: `/${string}`; alt: string; width: number; height: number };
+  preview?: {
+    src: `/${string}`;
+    alt: string;
+    width: number;
+    height: number;
+    fit?: "contain" | "cover";
+  };
   metrics?: readonly { value: string; label: string }[];
 };
 
@@ -45,6 +51,13 @@ export const projects: readonly Project[] = [
   {
     id: "sis-monitoring",
     name: "SIS Monitoring",
+    preview: {
+      src: "/projects/sys-monitoring-original.jpg",
+      alt: "Sys Monitoring com indicadores de status dos pedidos, filtros e gráficos de distribuição por transportadora.",
+      width: 1600,
+      height: 768,
+      fit: "contain",
+    },
     category: "Produto digital · Observabilidade",
     title: "Clareza para uma operação de 95 mil pedidos.",
     context: "SIS Monitoring · Produto interno B2C",
@@ -91,32 +104,59 @@ export const projects: readonly Project[] = [
     },
   },
   {
-    id: "herica",
-    name: "Herica",
-    category: "Customer experience · Conversação",
-    title: "Jornadas que aproximam marcas e pessoas.",
-    context: "Herica · Cia. Hering",
+    id: "akyama",
+    name: "Akyama",
+    preview: {
+      src: "/projects/gestao-escolar.png",
+      alt: "Sistema de gestão escolar com formulários de alunos, matérias e provas, incluindo seleção de aluno, matéria e nota.",
+      width: 1638,
+      height: 868,
+      fit: "contain",
+    },
+    category: "Aplicação web · Educação",
+    title: "Gestão escolar conectada, do cadastro às notas.",
+    context: "Akyama · Sistema de gestão escolar",
     description:
-      "Evolução de jornadas no WhatsApp para atendimento, pagamento pendente, carrinho abandonado e pós-compra.",
+      "Alunos, matérias e provas organizados em um sistema de gestão escolar, com registro de notas e cálculo de médias para acompanhar o desempenho dos estudantes.",
     challenge:
-      "Conectar os fluxos de atendimento aos diferentes momentos da jornada de compra, mantendo o contexto da conversa.",
+      "Reunir os cadastros escolares e as avaliações em uma interface que facilite a consulta e a atualização dos dados, mantendo a relação entre alunos, matérias e provas.",
     solution:
-      "Evolução do chatbot e de automações com integrações de APIs, conectando experiência conversacional e necessidades da operação B2C.",
-    technologies: ["React", "Node.js", "APIs", "WhatsApp", "Product Analytics"],
+      "Frontend em Vue.js com operações de cadastro, edição e exclusão, integrado via Axios a uma API em Node.js e Express. Dados relacionados em PostgreSQL e cálculo de médias apresentado no painel de gestão.",
+    technologies: [
+      "Vue.js",
+      "Vite",
+      "Node.js",
+      "Express",
+      "PostgreSQL",
+      "Axios",
+    ],
   },
   {
-    id: "dashboards",
-    name: "Dashboards operacionais",
-    category: "Dados · Operação",
-    title: "Informação organizada para decidir melhor.",
-    context: "Dashboards operacionais",
+    id: "ecommerce-cadastra",
+    name: "E-commerce Cadastra",
+    category: "E-commerce · Experiência de compra",
+    title: "Da busca ao carrinho, uma experiência de compra intuitiva.",
+    context: "Cadastra · Desafio front-end",
     description:
-      "Visualizações que consolidam pagamentos, ruptura de estoque e interesse em produtos em uma leitura objetiva.",
+      "Catálogo de produtos com filtros por cor, tamanho e preço, ordenação e carrinho de compras. Uma interface responsiva para explorar produtos no desktop e no celular.",
     challenge:
-      "Reunir dados de diferentes jornadas para facilitar a identificação de tendências, handoffs e feedbacks.",
+      "Transformar o layout proposto no desafio em uma experiência de navegação funcional, conectando filtros, produtos e carrinho em diferentes tamanhos de tela.",
     solution:
-      "Integração de APIs, consultas e visualizações com foco na leitura rápida de indicadores operacionais.",
-    technologies: ["Node.js", "Express", "PostgreSQL", "Chart.js", "Axios"],
+      "Interface em React e TypeScript, estilizada com Sass, com carregamento progressivo de produtos e consumo de uma API simulada com JSON Server. Build organizado com Gulp e Webpack.",
+    technologies: [
+      "React",
+      "TypeScript",
+      "Sass",
+      "Gulp",
+      "Webpack",
+      "JSON Server",
+    ],
+    preview: {
+      src: "/projects/cadastra.png",
+      alt: "E-commerce Cadastra com catálogo de roupas, filtros por cor, tamanho e preço e botões de compra.",
+      width: 1440,
+      height: 1000,
+    },
   },
 ] satisfies readonly Project[];
 
